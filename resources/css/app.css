@@ -1,0 +1,219 @@
+@import "tailwindcss";
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans:
+        "Instrument Sans", ui-sans-serif, system-ui, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+}
+
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #34495e;
+    --orange-color: #ff6b35;
+    --hover-color: #e85a2a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ecf0f1;
+}
+
+/* Header */
+.crm-header {
+    background-color: #fff;
+    padding: 12px 24px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.crm-logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.crm-search {
+    flex: 0 0 500px;
+    position: relative;
+}
+
+.crm-search input {
+    width: 100%;
+    padding: 8px 40px 8px 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.crm-search input:focus {
+    outline: none;
+    border-color: var(--orange-color);
+}
+
+.crm-search button {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #7f8c8d;
+    cursor: pointer;
+}
+
+.crm-header-actions {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.crm-header-actions button {
+    background: none;
+    border: none;
+    color: #7f8c8d;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.crm-nav {
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: flex-start;
+    padding: 0;
+}
+
+.crm-nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 16px 24px;
+    display: inline-block;
+    transition: background-color 0.3s;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.crm-nav a:hover {
+    background-color: var(--secondary-color);
+}
+
+.crm-nav a.active {
+    background-color: var(--orange-color);
+}
+
+.crm-nav a i {
+    margin-right: 8px;
+}
+
+.dropdown-menu-custom {
+    position: absolute;
+    background: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    z-index: 1000;
+    margin-top: 0;
+}
+
+.dropdown-menu-custom a {
+    display: block;
+    padding: 12px 20px;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: background-color 0.2s;
+    font-size: 14px;
+}
+
+.dropdown-menu-custom a:hover {
+    background-color: #f8f9fa;
+}
+
+.crm-content {
+    padding: 24px;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.page-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.page-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.page-meta {
+    color: #7f8c8d;
+    font-size: 14px;
+}
+
+/* Button Styles */
+.btn-primary-custom {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.btn-primary-custom:hover {
+    background-color: #0056b3;
+}
+
+/* Card */
+.crm-card {
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    padding: 24px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .crm-header {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .crm-search {
+        flex: 1;
+        width: 100%;
+    }
+
+    .crm-nav {
+        flex-wrap: wrap;
+    }
+
+    .crm-nav a {
+        flex: 1;
+        text-align: center;
+        min-width: 120px;
+    }
+}
