@@ -12,7 +12,6 @@ pada dasarnya konsep mvc itu konsep pada sebuah arsitektur yang memisahkan antar
 Jawab:
 
 ```php
-if (!function_exists('dateDifference')) {
     function dateDifference($date1, $date2)
     {
         $d1 = \DateTime::createFromFormat('d/m/Y', $date1);
@@ -28,5 +27,4 @@ if (!function_exists('dateDifference')) {
             'days' => $diff->d,
         ];
     }
-}
 ```
